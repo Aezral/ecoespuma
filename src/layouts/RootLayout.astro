@@ -1,0 +1,65 @@
+---
+import "@/styles/globals.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+
+interface Props {
+    title: string;
+    className?: string;
+}
+const { title, className } = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body
+        class:list={[
+            "bg-cover flex flex-col  h-[100dvh] text-white",
+            className,
+        ]}
+    >
+        <nav class="bg-black py-4 px-12 m-0 flex items-center list-none gap-3">
+            <ul class="text-lg font-semibold">
+                <li>
+                    <a
+                        class:list={[
+                            {
+                                "text-[#fff]": pathname === "/",
+                                "text-[#747474] hover:text-[#b5b5b5]":
+                                    pathname !== "/",
+                            },
+                        ]}
+                        href="/">Inicio</a
+                    >
+                </li>
+            </ul>
+            <ul class="text-lg font-semibold">
+                <li>
+                    <a
+                        class:list={[
+                            ,
+                            {
+                                "text-[#fff]": pathname === "/juego",
+                                "text-[#747474] hover:text-[#b5b5b5]":
+                                    pathname !== "/juego",
+                            },
+                        ]}
+                        href="/juego">Juego</a
+                    >
+                </li>
+            </ul>
+        </nav>
+        <div class="flex-grow">
+            <slot />
+        </div>
+    </body>
+</html>

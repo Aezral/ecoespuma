@@ -1,0 +1,81 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+---
+
+<RootLayout className="bg-[rgb(15,15,15)]" title="Juego">
+    <div class="max-w-2xl mx-auto h-full ">
+        <div class="max-w-2xl size-full relative flex-grow">
+            <canvas class="size-full box-border border-x border-black bg-[rgb(24,24,24)] " id="game"></canvas>
+            <div id="mobile-controls" class="absolute hidden bottom-0 left-0 size-full">
+                <div
+                    id="left"
+                    class="absolute left-9 bottom-11 border-black border bg-gray-500 opacity-20 size-20"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M6 12H18M6 12L11 7M6 12L11 17"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <div
+                    id="right"
+                    class="absolute left-32 bottom-11 border border-black bg-gray-500 opacity-20 size-20"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M6 12H18M18 12L13 7M18 12L13 17"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <div
+                    id="switch"
+                    class="absolute right-9 bottom-11 border border-black bg-gray-500 opacity-20 size-20"
+                >
+                    <svg
+                        fill="#000000"
+                        viewBox="0 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>trashcan</title>
+                        <path
+                            d="M8 26c0 1.656 1.343 3 3 3h10c1.656 0 3-1.344 3-3l2-16h-20l2 16zM19 13h2v13h-2v-13zM15 13h2v13h-2v-13zM11 13h2v13h-2v-13zM25.5 6h-6.5c0 0-0.448-2-1-2h-4c-0.553 0-1 2-1 2h-6.5c-0.829 0-1.5 0.671-1.5 1.5s0 1.5 0 1.5h22c0 0 0-0.671 0-1.5s-0.672-1.5-1.5-1.5z"
+                        ></path>
+                    </svg>
+                </div>
+                <div
+                    id="pause"
+                    class="absolute right-9 top-6 border border-black bg-gray-500 opacity-20 size-20"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M6 4h4v16H6V4ZM14 4h4v16h-4V4Z" fill="#000000"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</RootLayout>
+
+<script>
+    import { start } from "@/scripts/game/start";
+    start();
+</script> 

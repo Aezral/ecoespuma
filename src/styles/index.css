@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+
+
+section h2 {
+    color: #5acf3a;
+    margin: 0.5rem;
+}
+
+section p {
+    margin: 0 auto;
+}
+.hl {
+    color: #98ff48;
+    font-weight: bold;
+}
+
+footer {
+
+
+    color:gray;
+
+    padding: 1rem 1rem;
+    
+}
+
+footer a{
+    color:lightgreen;
+}
