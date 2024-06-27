@@ -4,7 +4,7 @@ import { getElementInterval } from "./util";
 
 export default function startElementCreationInterval(gs: GameState) {
     function interval() {
-        console.log(getElementInterval(gs))
+        console.log(getElementInterval(gs));
         if (!gs.isFocused || gs.player.state !== PlayerState.Playing)
             return setTimeout(interval, getElementInterval(gs));
 

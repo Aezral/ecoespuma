@@ -50,7 +50,7 @@ export type GameState = {
         pauseButton: HTMLButtonElement;
         trashButton: HTMLButtonElement;
     };
-    
+
     isFocused: boolean;
 
     isMobile: boolean;
@@ -61,13 +61,13 @@ export type GameState = {
 export function createGameState({
     config,
     DOMElements,
-    imageURLs
+    imageURLs,
 }: {
     config: GameConfig;
     DOMElements: GameState["DOMElements"];
     imageURLs: {
         [key in ImageIndex]: string;
-    }
+    };
 }) {
     const gameState: GameState = {
         direction: Direction.None,

@@ -21,7 +21,6 @@ export const BASE_CONFIG = {
 export const getConfig = () => {
     const dpr = window.devicePixelRatio;
     const scale = dpr * 0.75;
-    
 
     return {
         ...BASE_CONFIG,
@@ -38,5 +37,4 @@ export const getConfig = () => {
     };
 };
 
-export type GameConfig= ReturnType<typeof getConfig>;
-
+export type GameConfig = ReturnType<typeof getConfig>;

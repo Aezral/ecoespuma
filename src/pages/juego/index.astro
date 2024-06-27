@@ -3,10 +3,15 @@ import RootLayout from "@/layouts/RootLayout.astro";
 ---
 
 <RootLayout className="bg-[rgb(15,15,15)]" title="Juego">
-    <div class="max-w-2xl mx-auto h-full ">
+    <div class="max-w-2xl mx-auto h-full">
         <div class="max-w-2xl size-full relative flex-grow">
-            <canvas class="size-full box-border border-x border-black bg-[rgb(24,24,24)] " id="game"></canvas>
-            <div id="mobile-controls" class="absolute hidden bottom-0 left-0 size-full">
+            <canvas
+                class="size-full box-border border-x border-black bg-[rgb(24,24,24)]"
+                id="game"></canvas>
+            <div
+                id="mobile-controls"
+                class="absolute hidden bottom-0 left-0 size-full"
+            >
                 <div
                     id="left"
                     class="absolute left-9 bottom-11 border-black border bg-gray-500 opacity-20 size-20"
@@ -78,4 +83,4 @@ import RootLayout from "@/layouts/RootLayout.astro";
 <script>
     import { start } from "@/scripts/game/start";
     start();
-</script> 
+</script>

@@ -2,18 +2,15 @@ import { playVictoryAudio } from "./audio";
 import gameLoop from "./renderFrame";
 import { PlayerState, type GameState } from "./state";
 
-export function hideMobileControls(gs: GameState){
+export function hideMobileControls(gs: GameState) {
     gs.DOMElements.mobileControls.classList.add("hidden");
 }
 
-export function showMobileControls(gs: GameState){
+export function showMobileControls(gs: GameState) {
     gs.DOMElements.mobileControls.classList.remove("hidden");
 }
 
-export function pauseGame(
-    gs: GameState,
-) {
-
+export function pauseGame(gs: GameState) {
     hideMobileControls(gs);
 
     gs.player.state = PlayerState.Paused;
@@ -22,7 +19,6 @@ export function pauseGame(
 }
 
 export function winGame(gs: GameState) {
-
     hideMobileControls(gs);
 
     gs.lastStopped = Date.now();
@@ -33,7 +29,6 @@ export function winGame(gs: GameState) {
 }
 
 export function loseGame(gs: GameState) {
-
     hideMobileControls(gs);
 
     gs.lastStopped = Date.now();
@@ -41,13 +36,12 @@ export function loseGame(gs: GameState) {
     gs.player.state = PlayerState.Lost;
 }
 
-export function continueGame(gs: GameState  ) {
+export function continueGame(gs: GameState) {
     if (
         gs.player.state != PlayerState.Paused &&
         gs.lastStopped + 2000 > Date.now()
     )
         return;
-
 
     switch (gs.player.state) {
         // Si aún no iniciaba, ganó o perdió
@@ -58,7 +52,8 @@ export function continueGame(gs: GameState  ) {
 
             gs.points = gs.config.initialPoints;
 
-            gs.player.x = gs.DOMElements.canvas.width / 2 - gs.config.espumaWidth / 2;
+            gs.player.x =
+                gs.DOMElements.canvas.width / 2 - gs.config.espumaWidth / 2;
 
             gs.trashElements.splice(0, gs.trashElements.length);
 

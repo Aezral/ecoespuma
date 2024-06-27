@@ -20,17 +20,12 @@ export function createImages(urls: {
         [key in ImageIndex]: HTMLImageElement;
     };
 
-    for(const name in urls){
-
+    for (const name in urls) {
         const img = new Image();
         img.src = urls[name as ImageIndex];
 
-
         elementImages[name as ImageIndex] = img;
-
     }
-
-
 
     return elementImages;
 }

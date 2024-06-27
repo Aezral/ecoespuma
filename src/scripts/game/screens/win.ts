@@ -1,12 +1,11 @@
 import type { GameState } from "../state";
 
 export default function winScreen(gs: GameState) {
-
     const {
         ctx,
         config,
         isMobile,
-        DOMElements: { canvas }
+        DOMElements: { canvas },
     } = gs;
 
     ctx.fillStyle = "white";

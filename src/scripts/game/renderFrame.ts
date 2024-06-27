@@ -8,7 +8,6 @@ import type { GameState } from "./state";
 const perfectFrameTime = 1000 / 60;
 
 const renderFrame = (gs: GameState) => (timestamp: number) => {
-
     if (gs.lastGameLoopTimestamp === undefined)
         gs.lastGameLoopTimestamp = timestamp;
 

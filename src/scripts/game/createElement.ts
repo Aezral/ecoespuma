@@ -19,22 +19,23 @@ export type TrashElementName =
     | (typeof INORGANIC)[number]
     | (typeof ORGANIC)[number];
 
-    export type TrashElement = {
-        name: TrashElementName;
-        x: number;
-        y: number;
-        type: TrashElementType;
-    }
+export type TrashElement = {
+    name: TrashElementName;
+    x: number;
+    y: number;
+    type: TrashElementType;
+};
 
-export default function createElement(
-    gs: GameState
-):TrashElement{
+export default function createElement(gs: GameState): TrashElement {
     //const type =
     //   INORGANIC_TRASH[Math.floor(Math.random() * INORGANIC_TRASH.length)];
 
     const type = Math.random() > 0.5 ? 0 : 1;
 
-    const { config, DOMElements:{canvas} } = gs;
+    const {
+        config,
+        DOMElements: { canvas },
+    } = gs;
 
     let name;
 

@@ -20,5 +20,4 @@ export async function playVictoryAudio(gs: GameState) {
     victoryAudio.volume = gs.config.volume;
     const audioClone = victoryAudio.cloneNode(true) as HTMLAudioElement;
     await audioClone.play();
-
 }

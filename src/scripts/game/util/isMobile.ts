@@ -12,4 +12,4 @@ export default function isMobile() {
             check = true;
     })(navigator.userAgent);
     return check;
-};
+}

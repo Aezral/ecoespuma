@@ -1,7 +1,6 @@
 import type { GameState } from "../state";
 
-export default function pausedScreen(gs:GameState) {
-
+export default function pausedScreen(gs: GameState) {
     const ctx = gs.ctx;
     const canvas = gs.DOMElements.canvas;
 
@@ -9,7 +8,9 @@ export default function pausedScreen(gs:GameState) {
 
     const text0 = `Pausado`;
     const text =
-        gs.isMobile ? `Presiona para continuar` : `Presiona espacio para continuar`;
+        gs.isMobile ?
+            `Presiona para continuar`
+        :   `Presiona espacio para continuar`;
 
     ctx.font = `${gs.config.fontSize * 1.75}px Arial `;
     ctx.fillText(
@@ -25,6 +26,4 @@ export default function pausedScreen(gs:GameState) {
         canvas.width / 2 - ctx.measureText(text).width / 2,
         canvas.height / 2 - 200
     );
-
-
 }

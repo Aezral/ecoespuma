@@ -2,7 +2,6 @@ import gameLoop from "../renderFrame";
 import type { GameState } from "../state";
 
 export default function noStartedScreen(gs: GameState) {
-
     const ctx = gs.ctx;
     const canvas = gs.DOMElements.canvas;
 
@@ -35,5 +34,5 @@ export default function noStartedScreen(gs: GameState) {
         espumaImageWidth * 1 * 0.6
     );
 
-    requestAnimationFrame(gameLoop(gs))
+    requestAnimationFrame(gameLoop(gs));
 }
